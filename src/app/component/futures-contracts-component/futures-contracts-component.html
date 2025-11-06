@@ -1,0 +1,20 @@
+
+<label for="sorting">Sort</label>
+<select (change)="setTableSort($event.target)" id="sorting">
+    <option value="type">Type</option>
+    <option value="symbol">Symbol</option>
+    <option value="market">Market</option>
+</select>
+@if(sortOption === 'type') {
+    @for(contractMarketType of contractMarketTypes; track contractMarketType) {
+        <app-futures-contract-detail-component [title]="contractMarketType" [futuresContracts]="getFuturesContractsByType(contractMarketType)"></app-futures-contract-detail-component>
+    }
+}
+@if(sortOption === 'symbol') {
+    <app-futures-contract-detail-component title="Futures Contracts" [futuresContracts]="getFuturesContractsByType('')"></app-futures-contract-detail-component>
+}
+@if(sortOption === 'market') {
+    @for(contractMarket of contractMarkets; track contractMarket) {
+        <app-futures-contract-detail-component [title]="contractMarket" [futuresContracts]="getFuturesContractsByMarket(contractMarket)"></app-futures-contract-detail-component>
+    }
+}

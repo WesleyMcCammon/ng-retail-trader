@@ -1,0 +1,44 @@
+
+<div class="container">
+    <!-- Order Input Column -->
+    <div class="column">
+        <h2>Order Information</h2>
+        <label for="symbol">Futures Contract</label>
+        <select (change)="selectSymbol($event.target)" id="symbol">
+            <option value="NQ">NQ</option>
+            <option value="ES">ES</option>
+        </select>
+
+        <label>Direction</label>
+        <select (change)="selectDirection($event.target)" id="direction">
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+        </select>
+
+        <label for="entry">Entry Price</label>
+        <input [(ngModel)]="entryPrice" type="number" id="entry" placeholder="e.g. 4500.00" />
+
+        <label for="exit">Exit Price</label>
+        <input [(ngModel)]="exitPrice" type="number" id="exit" placeholder="e.g. 4520.00" />
+
+        <label for="contracts">Contracts</label>
+        <input [(ngModel)]="contracts" type="number" id="contracts" placeholder="e.g. 2" />
+
+        <div>
+        <button (click)="calculateRisk()">Calculate</button>
+        </div>
+    </div>
+
+    <!-- Results Column -->
+    <div class="column">
+        <h2>Calculation Results</h2>
+        <label for="points">Points</label>
+        <input [(ngModel)]="points" type="text" id="points" readonly />
+
+        <label for="ticks">Ticks</label>
+        <input [(ngModel)]="ticks" type="text" id="ticks" readonly />
+
+        <label for="ticks">Profit or Loss</label>
+        <input [(ngModel)]="profitOrLoss" type="text" id="usd" readonly />
+    </div>
+</div>

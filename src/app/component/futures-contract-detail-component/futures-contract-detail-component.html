@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>{{title}} Futures Contracts</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Description</th>
+                <th>Market</th>
+                <th>Contract Months</th>
+                <th>Tick Value</th>
+                <th>Links</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(futuresContract of futuresContracts; track futuresContract.symbol) {
+            <tr>
+                <td>{{futuresContract.symbol}}</td>
+                <td>{{futuresContract.description}}</td>
+                <td>{{futuresContract.market}}</td>
+                <td>{{getDeliveryMonths(futuresContract.contractMonths)}}</td>
+                <td>${{futuresContract.tickValue | number: '1.2'}}</td>
+                <td><a [href]="baseChartUrl.replace('XXX', futuresContract.symbol)">Chart</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

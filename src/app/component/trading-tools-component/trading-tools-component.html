@@ -1,0 +1,70 @@
+<section class="section">
+    <h2>Profit/Loss Calculator</h2>
+    <div class="container">
+    <select (change)="changeCalculatorType($event.target)">
+        <option value="futures">Futures</option>
+        <option value="forex">Forex</option>
+    </select>
+    <div style="margin-top:10px;" [style.display]="calculatorType === 'futures' ? 'block' : 'none'">
+        <app-futures-calculator-component></app-futures-calculator-component>
+    </div>
+    <div style="margin-top:10px;" [style.display]="calculatorType === 'forex' ? 'block' : 'none'">
+        <app-forex-calculator-component></app-forex-calculator-component>
+    </div>
+</div>
+</section>
+<section class="section" id="risk-calculator">
+    <h2>📉 Risk Calculator</h2>
+    <div class="card">
+        <h3>Calculate Trade Risk</h3>
+        <label>Account Balance ($)</label>
+        <input type="number" placeholder="e.g. 10,000" />
+        <label>Risk Percentage (%)</label>
+        <input type="number" placeholder="e.g. 2" />
+        <label>Stop Loss (points)</label>
+        <input type="number" placeholder="e.g. 50" />
+        <button>Calculate Risk</button>
+    </div>
+</section>
+
+<section class="section" id="position-sizing">
+    <h2>📊 Position Sizing Tool</h2>
+    <div class="card">
+        <h3>Determine Position Size</h3>
+        <label>Risk Amount ($)</label>
+        <input type="number" placeholder="e.g. 200" />
+        <label>Stop Loss (points)</label>
+        <input type="number" placeholder="e.g. 20" />
+        <label>Point Value ($)</label>
+        <input type="number" placeholder="e.g. 1.25" />
+        <button>Calculate Position Size</button>
+    </div>
+</section>
+
+<section class="section" id="watchlist">
+    <h2>👀 Watchlist</h2>
+    <div class="card">
+        <h3>Track Your Favorite Assets</h3>
+        <label>Add Symbol</label>
+        <input type="text" placeholder="e.g. AAPL, BTCUSD" />
+        <button>Add to Watchlist</button>
+        <ul>
+            <li>🔹 AAPL</li>
+            <li>🔹 BTCUSD</li>
+            <li>🔹 SPY</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section" id="alerts">
+    <h2>🔔 Price Alerts</h2>
+    <div class="card">
+        <h3>Set Alert</h3>
+        <label>Symbol</label>
+        <input type="text" placeholder="e.g. ETHUSD" />
+        <label>Target Price ($)</label>
+        <input type="number" placeholder="e.g. 2000" />
+        <button>Set Alert</button>
+        <p>Alerts will notify you when the target price is reached.</p>
+    </div>
+</section>

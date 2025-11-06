@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="column">
+        <h2>Order Information</h2>
+        <label for="pair">Currency Pair</label>
+        <select (change)="selectPair($event.target)" id="pair">
+            <option value="EURUSD">EUR/USD</option>
+            <option value="GBPUSD">GBP/USD</option>
+            <option value="USDJPY">USD/JPY</option>
+            <option value="AUDUSD">AUD/USD</option>
+            <option value="USDCAD">USD/CAD</option>
+        </select>
+
+        <label>Direction</label>
+        <select (change)="selectDirection($event.target)">
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+        </select>
+
+        <label for="entry">Entry Price</label>
+        <input [(ngModel)]="entryPrice" type="number" id="entry" placeholder="e.g. 1.1000" step="0.0001" />
+
+        <label for="exit">Exit Price</label>
+        <input [(ngModel)]="exitPrice" type="number" id="exit" placeholder="e.g. 1.1050" step="0.0001" />
+
+        <label for="lots">Lot Size</label>
+        <input [(ngModel)]="numberLots" type="number" id="lots" placeholder="e.g. 1.0" step="0.01" />
+
+        <div>
+        <button (click)="calculatePips()">Calculate</button>
+        </div>
+
+    </div>
+    <div class="column">
+        <h2>Calculation Results</h2>
+        <label for="points">Pips</label>
+        <input [(ngModel)]="resultInPips" type="text" id="points" readonly />
+
+        <label for="ticks">Profit or Loss</label>
+        <input [(ngModel)]="profitOrLoss" type="text" id="usd" readonly />
+    </div>
+
+
+
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <label>Select Calculator {{calculatorType}}</label>
+    <select (change)="changeCalculatorType($event.target)">
+        <option value="futures">Futures</option>
+        <option value="forex">Forex</option>
+    </select>
+    <div [style.display]="calculatorType === 'futures' ? 'block' : 'none'">
+        <app-futures-calculator-component></app-futures-calculator-component>
+    </div>
+    <div [style.display]="calculatorType === 'forex' ? 'block' : 'none'">
+        <app-forex-calculator-component></app-forex-calculator-component>
+    </div>
+</div>

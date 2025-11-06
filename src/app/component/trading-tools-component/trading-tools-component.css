@@ -1,0 +1,62 @@
+.section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 500px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #34495e;
+}
+
+.card input,
+.card select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.card button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #2980b9;
+}
+
+select,
+input {
+    width: 55%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
