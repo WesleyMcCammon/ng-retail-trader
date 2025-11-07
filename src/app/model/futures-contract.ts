@@ -13,3 +13,19 @@ export interface FuturesContractType {
   name: string;
   description: string;
 }
+
+export enum CurrencyType {
+  MAJOR, MINOR, EXOTIC
+}
+
+export interface Currency {
+  symbol: string;
+  description: string;
+}
+
+export interface CurrencyPair {
+  baseCurrency: string;
+  quoteCurrency: string;
+  description: string;
+  currencyType: CurrencyType;
+}
