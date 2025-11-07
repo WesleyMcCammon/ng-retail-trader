@@ -22,6 +22,8 @@ import { MostTradedComponent } from './component/most-traded-component/most-trad
 import { StockMarketSymbolsComponent } from './component/stock-market-symbols-component/stock-market-symbols-component';
 import { ForexPairsComponent } from './component/forex-pairs-component/forex-pairs-component';
 import { FuturesContractsComponent } from './component/futures-contracts-component/futures-contracts-component';
+import { ForexPositionSizeCalculatorComponent } from './component/forex-position-size-calculator-component/forex-position-size-calculator-component';
+import { FuturesPositionSizeCalculatorComponent } from './component/futures-position-size-calculator-component/futures-position-size-calculator-component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -46,5 +48,8 @@ export const routes: Routes = [
     { path: 'stock-market-symbols', component: StockMarketSymbolsComponent},
     { path: 'forex-pairs', component: ForexPairsComponent},
     { path: 'futures-contracts', component: FuturesContractsComponent},
+    { path: 'forex-position-size-calculator', component: ForexPositionSizeCalculatorComponent},
+    { path: 'futures-position-size-calculator', component: FuturesPositionSizeCalculatorComponent},
+    
     { path: '**', component: PageNotFoundComponent }
 ];
