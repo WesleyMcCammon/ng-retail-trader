@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ForexService } from '../../service/forex-service';
+import { CurrencyPair } from '../../model/futures-contract';
 
 @Component({
   selector: 'app-forex-position-size-calculator-component',
@@ -7,7 +9,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './forex-position-size-calculator-component.html',
   styleUrl: './forex-position-size-calculator-component.css',
 })
-export class ForexPositionSizeCalculatorComponent {
+export class ForexPositionSizeCalculatorComponent implements OnInit {
+  currencyPairs: CurrencyPair[] = new Array<CurrencyPair>();
   accountSize: string = '';
   riskPercent: string = '';
   stopLossPips: string = '';
@@ -16,6 +19,19 @@ export class ForexPositionSizeCalculatorComponent {
   lotSize: string = '';
   currencyPair: string = 'EUR/USD';
   accountCurrency: string = 'USD';
+
+  constructor(private forexService: ForexService) { }
+
+  ngOnInit(): void {
+    this.forexService.getCurrencyPairs().subscribe((currencyPairs: CurrencyPair[]) => {
+      this.currencyPairs = currencyPairs;
+    });
+  }
+
+  getPairsByCurrencyType(currencyType: string): CurrencyPair[] {
+    return this.currencyPairs.filter(c => c.currencyType == currencyType)
+      .sort((a, b) => a.baseCurrency.localeCompare(b.baseCurrency));
+  }
 
   setAccountSize(eventTarget: EventTarget | null) {
     this.accountSize = (eventTarget as HTMLInputElement).value;

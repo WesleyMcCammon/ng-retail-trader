@@ -98,3 +98,9 @@
 p {
     line-height: 1.7em;
 }
+
+.inline-image {
+    width: 200px;
+      vertical-align: middle; /* Aligns the image with the text */
+      margin-right: 10px;    /* Adds spacing between the image and text */
+    }

@@ -12,13 +12,19 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>EUR/USD</td><td>Euro / US Dollar</td><td><a href="https://finance.yahoo.com/quote/EURUSD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/JPY</td><td>US Dollar / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/USDJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>GBP/USD</td><td>British Pound / US Dollar</td><td><a href="https://finance.yahoo.com/quote/GBPUSD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/CHF</td><td>US Dollar / Swiss Franc</td><td><a href="https://finance.yahoo.com/quote/USDCHF=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>AUD/USD</td><td>Australian Dollar / US Dollar</td><td><a href="https://finance.yahoo.com/quote/AUDUSD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/CAD</td><td>US Dollar / Canadian Dollar</td><td><a href="https://finance.yahoo.com/quote/USDCAD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>NZD/USD</td><td>New Zealand Dollar / US Dollar</td><td><a href="https://finance.yahoo.com/quote/NZDUSD=X" target="_blank">View Chart</a></td></tr>
+        @for(currencyPair of getPairsByCurrencyType("MAJOR"); track currencyPairs) {
+          <tr>
+            <td>
+              {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
+            </td>
+            <td>
+              {{currencyPair.description}}
+            </td>
+            <td>
+              <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
 
@@ -32,14 +38,19 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>EUR/GBP</td><td>Euro / British Pound</td><td><a href="https://finance.yahoo.com/quote/EURGBP=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/JPY</td><td>Euro / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/EURJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>GBP/JPY</td><td>British Pound / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/GBPJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>AUD/NZD</td><td>Australian Dollar / New Zealand Dollar</td><td><a href="https://finance.yahoo.com/quote/AUDNZD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/AUD</td><td>Euro / Australian Dollar</td><td><a href="https://finance.yahoo.com/quote/EURAUD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/CAD</td><td>Euro / Canadian Dollar</td><td><a href="https://finance.yahoo.com/quote/EURCAD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>AUD/JPY</td><td>Australian Dollar / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/AUDJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>CHF/JPY</td><td>Swiss Franc / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/CHFJPY=X" target="_blank">View Chart</a></td></tr>
+        @for(currencyPair of getPairsByCurrencyType("MINOR"); track currencyPairs) {
+          <tr>
+            <td>
+              {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
+            </td>
+            <td>
+              {{currencyPair.description}}
+            </td>
+            <td>
+              <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
 
@@ -53,16 +64,19 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>USD/TRY</td><td>US Dollar / Turkish Lira</td><td><a href="https://finance.yahoo.com/quote/USDTRY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/ZAR</td><td>US Dollar / South African Rand</td><td><a href="https://finance.yahoo.com/quote/USDZAR=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/SEK</td><td>US Dollar / Swedish Krona</td><td><a href="https://finance.yahoo.com/quote/USDSEK=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/SGD</td><td>US Dollar / Singapore Dollar</td><td><a href="https://finance.yahoo.com/quote/USDSGD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/MXN</td><td>US Dollar / Mexican Peso</td><td><a href="https://finance.yahoo.com/quote/USDMXN=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/THB</td><td>US Dollar / Thai Baht</td><td><a href="https://finance.yahoo.com/quote/USDTHB=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/HKD</td><td>US Dollar / Hong Kong Dollar</td><td><a href="https://finance.yahoo.com/quote/USDHKD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/INR</td><td>US Dollar / Indian Rupee</td><td><a href="https://finance.yahoo.com/quote/USDINR=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/TRY</td><td>Euro / Turkish Lira</td><td><a href="https://finance.yahoo.com/quote/EURTRY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/ZAR</td><td>Euro / South African Rand</td><td><a href="https://finance.yahoo.com/quote/EURZAR=X" target="_blank">View Chart</a></td></tr>
+        @for(currencyPair of getPairsByCurrencyType("EXOTIC"); track currencyPairs) {
+          <tr>
+            <td>
+              {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
+            </td>
+            <td>
+              {{currencyPair.description}}
+            </td>
+            <td>
+              <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </div>

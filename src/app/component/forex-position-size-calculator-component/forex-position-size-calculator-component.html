@@ -5,34 +5,19 @@
             <label for="currencyPair">Currency Pair</label>
             <select [(ngModel)]="currencyPair" id="currencyPair">
                 <optgroup label="Major Pairs">
-                    <option>EUR/USD</option>
-                    <option>USD/JPY</option>
-                    <option>GBP/USD</option>
-                    <option>USD/CHF</option>
-                    <option>AUD/USD</option>
-                    <option>USD/CAD</option>
-                    <option>NZD/USD</option>
+                    @for(currencyPair of getPairsByCurrencyType("MAJOR"); track currencyPairs) {
+                        <option>{{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}</option>
+                    }
                 </optgroup>
                 <optgroup label="Minor Pairs">
-                    <option>EUR/GBP</option>
-                    <option>EUR/AUD</option>
-                    <option>EUR/JPY</option>
-                    <option>GBP/JPY</option>
-                    <option>AUD/JPY</option>
-                    <option>CHF/JPY</option>
-                    <option>CAD/JPY</option>
+                    @for(currencyPair of getPairsByCurrencyType("MINOR"); track currencyPairs) {
+                        <option>{{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}</option>
+                    }
                 </optgroup>
                 <optgroup label="Top 10 Exotic Pairs">
-                    <option>USD/SEK</option>
-                    <option>USD/NOK</option>
-                    <option>USD/DKK</option>
-                    <option>USD/ZAR</option>
-                    <option>USD/SGD</option>
-                    <option>USD/HKD</option>
-                    <option>USD/TRY</option>
-                    <option>USD/MXN</option>
-                    <option>USD/CNY</option>
-                    <option>USD/THB</option>
+                    @for(currencyPair of getPairsByCurrencyType("EXOTIC"); track currencyPairs) {
+                        <option>{{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}</option>
+                    }
                 </optgroup>
             </select>
 
