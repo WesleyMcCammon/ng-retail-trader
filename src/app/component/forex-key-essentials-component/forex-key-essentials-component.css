@@ -1,0 +1,30 @@
+header {
+    text-align: center;
+}
+
+
+
+h2 {
+    color: #34495e;
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}

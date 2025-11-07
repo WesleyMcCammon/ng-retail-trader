@@ -26,3 +26,17 @@
         margin-bottom: 20px;
     }
 }
+
+ul li {
+    line-height: 2rem;
+}
+a,
+a:visited {
+    color: black;
+    opacity: .7;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}

@@ -16,11 +16,22 @@ import { ForexPairsComponent } from './component/forex-pairs-component/forex-pai
 import { FuturesContractsComponent } from './component/futures-contracts-component/futures-contracts-component';
 import { ForexPositionSizeCalculatorComponent } from './component/forex-position-size-calculator-component/forex-position-size-calculator-component';
 import { FuturesPositionSizeCalculatorComponent } from './component/futures-position-size-calculator-component/futures-position-size-calculator-component';
+import { BuildATradingPlanComponent } from './component/build-a-trading-plan-component/build-a-trading-plan-component';
+import { ForexGettingStartedComponent } from './component/forex-getting-started-component/forex-getting-started-component';
+import { ForexTradingSoftwareComponent } from './component/forex-trading-software-component/forex-trading-software-component';
+import { ForexIndicatorsComponent } from './component/forex-indicators-component/forex-indicators-component';
+import { ChartTypeComponent } from './component/chart-type-component/chart-type-component';
+import { ForexKeyEssentialsComponent } from './component/forex-key-essentials-component/forex-key-essentials-component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
+    { path: 'forex-getting-started', component: ForexGettingStartedComponent},
+    { path: 'forex-trading-software', component: ForexTradingSoftwareComponent},
+    { path: 'forex-trading-indicators', component: ForexIndicatorsComponent },
+    { path: 'chart-types', component: ChartTypeComponent },
     { path: 'top-five-mistakes', component: TopFiveMistakesComponent},
     { path: 'trading-journals', component: TradingJournalComponent},
+    { path: 'app-forex-key-essentials-component', component: ForexKeyEssentialsComponent},
     { path: 'technical-indicators', component: TechnicalIndicatorsComponent},
     { path: 'glossary', component: GlossaryComponent},
     { path: 'fundamental-analysis', component: FundamentalAnalysisComponent },
@@ -34,5 +45,6 @@ export const routes: Routes = [
     { path: 'futures-contracts', component: FuturesContractsComponent},
     { path: 'forex-position-size-calculator', component: ForexPositionSizeCalculatorComponent},
     { path: 'futures-position-size-calculator', component: FuturesPositionSizeCalculatorComponent},    
+    { path: 'build-a-trading-plan', component: BuildATradingPlanComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
