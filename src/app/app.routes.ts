@@ -33,7 +33,6 @@ export const routes: Routes = [
     { path: 'forex-pairs', component: ForexPairsComponent},
     { path: 'futures-contracts', component: FuturesContractsComponent},
     { path: 'forex-position-size-calculator', component: ForexPositionSizeCalculatorComponent},
-    { path: 'futures-position-size-calculator', component: FuturesPositionSizeCalculatorComponent},
-    
+    { path: 'futures-position-size-calculator', component: FuturesPositionSizeCalculatorComponent},    
     { path: '**', component: PageNotFoundComponent }
 ];
