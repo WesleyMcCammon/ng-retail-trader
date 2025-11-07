@@ -1,4 +1,4 @@
-.hero {
+/* .hero {
     background: linear-gradient(to right, #2c3e50, #3498db);
     color: white;
     padding: 60px 20px;
@@ -51,4 +51,50 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex: 1 1 300px;
 }
+ */
+.section {
+    padding: 40px 20px;
+    margin: auto;
+}
 
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #34495e;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.video-embed {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 8px;
+}
+
+p {
+    line-height: 1.7em;
+}

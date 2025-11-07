@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Futures Position Size Calculator</h1>
+
+  <div class="grid">
+    <div class="card" style="width:50%">
+      <label for="contract">Select Futures Contract</label>
+      <select id="contract" (change)="setContract($event.target)">
+        @for(futuresContract of futuresContracts; track futuresContract.symbol) {
+          <option [value]="futuresContract.symbol">{{futuresContract.description}} ({{futuresContract.symbol}})</option>
+        }
+      </select>
+
+      <label for="accountSize">Account Size ($)</label>
+      <input [(ngModel)]="accountSize" type="number" id="accountSize" placeholder="e.g. 25000" />
+
+      <label for="riskPercent">Risk per Trade (%)</label>
+      <input [(ngModel)]="riskPercent" type="number" id="riskPercent" placeholder="e.g. 1.5" />
+
+      <label for="stopLossTicks">Stop Loss (ticks)</label>
+      <input [(ngModel)]="stopLossTicks" type="number" id="stopLossTicks" placeholder="e.g. 10" />
+
+      <label for="tickValue">Tick Value ($)</label>
+      <input [(ngModel)]="tickValue" type="number" id="tickValue" placeholder="Auto-filled" readonly />
+
+      <button (click)="calculateFuturesPosition()">Calculate</button>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      Results go here
+    </div>
+  </div>
+</div>

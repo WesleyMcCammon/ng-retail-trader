@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FuturesCalculatorComponent } from "../futures-calculator-component/futures-calculator-component";
-import { ForexCalculatorComponent } from "../forex-calculator-component/forex-calculator-component";
+import { ForexPositionSizeCalculatorComponent } from "../forex-position-size-calculator-component/forex-position-size-calculator-component";
+import { FuturesPositionSizeCalculatorComponent } from "../futures-position-size-calculator-component/futures-position-size-calculator-component";
 
 @Component({
   selector: 'app-test-component',
-  imports: [FuturesCalculatorComponent, ForexCalculatorComponent],
+  imports: [ForexPositionSizeCalculatorComponent, FuturesPositionSizeCalculatorComponent],
   templateUrl: './test-component.html',
   styleUrl: './test-component.css',
 })

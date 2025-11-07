@@ -1,0 +1,90 @@
+<div class="container">
+    <h1>Forex Position Size Calculator</h1>
+    <div class="grid">
+        <div class="card" style="width:50%">
+            <label for="currencyPair">Currency Pair</label>
+            <select [(ngModel)]="currencyPair" id="currencyPair">
+                <optgroup label="Major Pairs">
+                    <option>EUR/USD</option>
+                    <option>USD/JPY</option>
+                    <option>GBP/USD</option>
+                    <option>USD/CHF</option>
+                    <option>AUD/USD</option>
+                    <option>USD/CAD</option>
+                    <option>NZD/USD</option>
+                </optgroup>
+                <optgroup label="Minor Pairs">
+                    <option>EUR/GBP</option>
+                    <option>EUR/AUD</option>
+                    <option>EUR/JPY</option>
+                    <option>GBP/JPY</option>
+                    <option>AUD/JPY</option>
+                    <option>CHF/JPY</option>
+                    <option>CAD/JPY</option>
+                </optgroup>
+                <optgroup label="Top 10 Exotic Pairs">
+                    <option>USD/SEK</option>
+                    <option>USD/NOK</option>
+                    <option>USD/DKK</option>
+                    <option>USD/ZAR</option>
+                    <option>USD/SGD</option>
+                    <option>USD/HKD</option>
+                    <option>USD/TRY</option>
+                    <option>USD/MXN</option>
+                    <option>USD/CNY</option>
+                    <option>USD/THB</option>
+                </optgroup>
+            </select>
+
+            <label for="accountCurrency">Account Currency</label>
+            <select [(ngModel)]="accountCurrency" id="accountCurrency">
+                <option>USD</option>
+                <option>EUR</option>
+                <option>JPY</option>
+                <option>GBP</option>
+                <option>CHF</option>
+                <option>AUD</option>
+                <option>CAD</option>
+                <option>NZD</option>
+                <option>SEK</option>
+                <option>NOK</option>
+                <option>DKK</option>
+                <option>ZAR</option>
+                <option>SGD</option>
+                <option>HKD</option>
+                <option>TRY</option>
+                <option>MXN</option>
+                <option>CNY</option>
+                <option>THB</option>
+            </select>
+
+            <label for="accountSize">Account Size</label>
+            <input [(ngModel)]="accountSize" type="number" id="accountSize" placeholder="e.g. 10000" />
+
+            <label for="riskPercent">Risk per Trade (%)</label>
+            <input [(ngModel)]="riskPercent" type="number" id="riskPercent" placeholder="e.g. 2" />
+
+            <label for="stopLossPips">Stop Loss (pips)</label>
+            <input [(ngModel)]="stopLossPips" type="number" id="stopLossPips" placeholder="e.g. 50" />
+
+            <label for="pipValue">Pip Value ($)</label>
+            <input [(ngModel)]="pipValue" type="number" id="pipValue" placeholder="e.g. 10" />
+
+            <button (click)="calculatePositionSize()">Calculate</button>
+        </div>
+        <div class="card">
+            <div style="display:grid; grid-template-columns: 1fr 1fr;gap: 5px;">
+                <div>
+                    <label for="risk">Risk Amount</label>
+                    <input [(ngModel)]="riskAmount" type="text">
+                </div>
+                <div>
+                    <label for="lotSize">Lot Size</label>
+                    <input [(ngModel)]="lotSize" type="text">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
