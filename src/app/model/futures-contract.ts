@@ -15,7 +15,7 @@ export interface FuturesContractType {
 }
 
 export enum CurrencyType {
-  MAJOR, MINOR, EXOTIC
+  MAJOR = "MAJOR", MINOR = "MINOR", EXOTIC = "EXOTIC"
 }
 
 export interface Currency {

@@ -23,24 +23,24 @@ export class ForexService {
 
     currencyPairs.push({ baseCurrency: 'EUR', quoteCurrency: 'GBP', description: 'Euro / British Pound', currencyType: CurrencyType.MINOR });
     currencyPairs.push({ baseCurrency: 'EUR', quoteCurrency: 'JPY', description: 'Euro / Japanese Yen', currencyType: CurrencyType.MINOR });
-        <tr><td>GBP/JPY</td><td>British Pound / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/GBPJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>AUD/NZD</td><td>Australian Dollar / New Zealand Dollar</td><td><a href="https://finance.yahoo.com/quote/AUDNZD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/AUD</td><td>Euro / Australian Dollar</td><td><a href="https://finance.yahoo.com/quote/EURAUD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>EUR/CAD</td><td>Euro / Canadian Dollar</td><td><a href="https://finance.yahoo.com/quote/EURCAD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>AUD/JPY</td><td>Australian Dollar / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/AUDJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>CHF/JPY</td><td>Swiss Franc / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/CHFJPY=X" target="_blank">View Chart</a></td></tr>
+    currencyPairs.push({ baseCurrency: 'GBP', quoteCurrency: 'JPY', description: 'British Pound / Japanese Yen', currencyType: CurrencyType.MINOR });
+    currencyPairs.push({ baseCurrency: 'AUD', quoteCurrency: 'NZD', description: 'Australian Dollar / New Zealand Dollar', currencyType: CurrencyType.MINOR });
+    currencyPairs.push({ baseCurrency: 'EUR', quoteCurrency: 'AUD', description: 'Euro / Australian Dollar', currencyType: CurrencyType.MINOR });
+    currencyPairs.push({ baseCurrency: 'EUR', quoteCurrency: 'CAD', description: 'Euro / Canadian Dollar', currencyType: CurrencyType.MINOR });
+    currencyPairs.push({ baseCurrency: 'AUD', quoteCurrency: 'JPY', description: 'Australian Dollar / Japanese Yen', currencyType: CurrencyType.MINOR });
+    currencyPairs.push({ baseCurrency: 'CHF', quoteCurrency: 'JPY', description: 'Swiss Franc / Japanese Yen', currencyType: CurrencyType.MINOR });
+    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'TRY', description: 'US Dollar / Turkish Lira', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'ZAR', description: 'US Dollar / South African Rand', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'SEK', description: 'US Dollar / Swedish Krona', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'SGD', description: '>US Dollar / Singapore Dollar', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'MXN', description: 'US Dollar / Mexican Peso', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'THB', description: 'US Dollar / Thai Baht', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'HKD', description: 'US Dollar / Hong Kong Dollar', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'USD', quoteCurrency: 'INR', description: 'US Dollar / Indian Rupee', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'EUR', quoteCurrency: 'TRY', description: 'Euro / Turkish Lira', currencyType: CurrencyType.EXOTIC });    
+    currencyPairs.push({ baseCurrency: 'EUR', quoteCurrency: 'ZAR', description: 'Euro / South African Rand', currencyType: CurrencyType.EXOTIC });    
 
-    return of(new Array<CurrencyPair>());
+    return of(currencyPairs);
   }
 }
-/*
-
-        <tr><td>EUR/USD</td><td>Euro / US Dollar</td><td><a href="https://finance.yahoo.com/quote/EURUSD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/JPY</td><td>US Dollar / Japanese Yen</td><td><a href="https://finance.yahoo.com/quote/USDJPY=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>GBP/USD</td><td>British Pound / US Dollar</td><td><a href="https://finance.yahoo.com/quote/GBPUSD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/CHF</td><td>US Dollar / Swiss Franc</td><td><a href="https://finance.yahoo.com/quote/USDCHF=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>AUD/USD</td><td>Australian Dollar / US Dollar</td><td><a href="https://finance.yahoo.com/quote/AUDUSD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>USD/CAD</td><td>US Dollar / Canadian Dollar</td><td><a href="https://finance.yahoo.com/quote/USDCAD=X" target="_blank">View Chart</a></td></tr>
-        <tr><td>NZD/USD</td><td>New Zealand Dollar / US Dollar</td><td><a href="https://finance.yahoo.com/quote/NZDUSD=X" target="_blank">View Chart</a></td></tr>
-
-*/
