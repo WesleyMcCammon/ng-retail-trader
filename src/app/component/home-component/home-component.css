@@ -52,7 +52,7 @@
     flex: 1 1 300px;
 }
  */
-.section {
+/* .section {
     padding: 40px 20px;
     margin: auto;
 }
@@ -94,13 +94,7 @@
     border: none;
     border-radius: 8px;
 }
-
+*/
 p {
     line-height: 1.7em;
 }
-
-.inline-image {
-    width: 100px;
-      vertical-align: middle; /* Aligns the image with the text */
-      margin-right: 10px;    /* Adds spacing between the image and text */
-    }

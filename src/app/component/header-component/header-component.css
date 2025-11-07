@@ -3,7 +3,10 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    background-image: url('/assets/images/bannerImagePattern.png'); /* Replace with your image URL */
+    background-repeat: repeat; /* Repeats the image both horizontally and vertically */
 }
+
 
 nav {
     background-color: #1e1e2f;

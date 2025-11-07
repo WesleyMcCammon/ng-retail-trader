@@ -1,0 +1,71 @@
+/* Sidebar container */
+.sidebar {
+  width: 250px;
+  /* background-color: #1e1e1e;
+  color: white; */
+  color: black;
+  padding: 1rem;
+  font-family: sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+/* Navigation styling */
+.vertical-nav details {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.vertical-nav summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  /* background-color: #2a2a2a; */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+.vertical-nav li {
+  margin: 0.5rem 0;
+}
+
+.vertical-nav a {
+  /* color: #ccc; */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vertical-nav a:hover {
+  color: black;
+}
+
+/* Icon styling */
+.icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive collapse */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .vertical-nav summary {
+    font-size: 1rem;
+  }
+
+  .vertical-nav ul {
+    padding-left: 0.5rem;
+  }
+}
