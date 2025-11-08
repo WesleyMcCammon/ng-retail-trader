@@ -21,7 +21,16 @@ import { ForexGettingStartedComponent } from './component/forex-getting-started-
 import { ForexTradingSoftwareComponent } from './component/forex-trading-software-component/forex-trading-software-component';
 import { ForexIndicatorsComponent } from './component/forex-indicators-component/forex-indicators-component';
 import { ChartTypeComponent } from './component/chart-type-component/chart-type-component';
-import { ForexKeyEssentialsComponent } from './component/forex-key-essentials-component/forex-key-essentials-component';
+import { HowForexMarketWorksComponent } from './component/how-forex-market-works-component/how-forex-market-works-component';
+import { ForexEducationResourcesComponent } from './component/forex-education-resources-component/forex-education-resources-component';
+import { ForexGiftShopComponent } from './component/forex-gift-shop-component/forex-gift-shop-component';
+import { ForexChoosingABrokerComponent } from './component/forex-choosing-a-broker-component/forex-choosing-a-broker-component';
+import { ForexAccountTypesComponent } from './component/forex-account-types-component/forex-account-types-component';
+import { ForexPropFirmsComponent } from './component/forex-prop-firms-component/forex-prop-firms-component';
+import { TradingPsychologyComponent } from './component/trading-psychology-component/trading-psychology-component';
+import { ForexKeyConceptsComponent } from './component/forex-key-concepts-component/forex-key-concepts-component';
+import { TestComponent } from './component/test-component/test-component';
+import { ForexTopBrokersComponent } from './component/forex-top-brokers-component/forex-top-brokers-component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -31,7 +40,7 @@ export const routes: Routes = [
     { path: 'chart-types', component: ChartTypeComponent },
     { path: 'top-five-mistakes', component: TopFiveMistakesComponent},
     { path: 'trading-journals', component: TradingJournalComponent},
-    { path: 'app-forex-key-essentials-component', component: ForexKeyEssentialsComponent},
+    { path: 'key-concepts', component: ForexKeyConceptsComponent},
     { path: 'technical-indicators', component: TechnicalIndicatorsComponent},
     { path: 'glossary', component: GlossaryComponent},
     { path: 'fundamental-analysis', component: FundamentalAnalysisComponent },
@@ -46,5 +55,14 @@ export const routes: Routes = [
     { path: 'forex-position-size-calculator', component: ForexPositionSizeCalculatorComponent},
     { path: 'futures-position-size-calculator', component: FuturesPositionSizeCalculatorComponent},    
     { path: 'build-a-trading-plan', component: BuildATradingPlanComponent},
+    { path: 'forex-market-works', component: HowForexMarketWorksComponent },
+    { path: 'trading-psychology', component: TradingPsychologyComponent},
+    { path: 'forex-education-resources', component: ForexEducationResourcesComponent },
+    { path: 'forex-gift-shop', component: ForexGiftShopComponent },
+    { path: 'forex-choose-broker', component: ForexChoosingABrokerComponent},
+    { path: 'forex-account-types', component: ForexAccountTypesComponent},
+    { path: 'forex-prop-firms', component: ForexPropFirmsComponent },
+    { path: 'top-forex-brokers', component: ForexTopBrokersComponent },
+    { path: 'test', component: TestComponent},
     { path: '**', component: PageNotFoundComponent }
 ];

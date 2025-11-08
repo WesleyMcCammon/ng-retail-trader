@@ -1,0 +1,49 @@
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+}
+
+.product-price {
+    color: #ff6f61;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+}

@@ -1,0 +1,477 @@
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+
+            <!-- Main Product Area -->
+            <main class="flex-1">
+                <!-- Catalog Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-primary mb-2">Product Catalog</h1>
+                        <p class="text-secondary">Showing <span id="resultCount" class="font-medium text-primary">1,247</span> products</p>
+                    </div>
+                    
+                    <!-- View Toggle & Sort -->
+                    <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                        <!-- View Toggle -->
+                        <div class="flex items-center bg-surface rounded-lg p-1">
+                            <button id="gridView" class="p-2 rounded text-accent bg-white shadow-sm">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                </svg>
+                            </button>
+                            <button id="listView" class="p-2 rounded text-gray-400 hover:text-accent transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Sort Dropdown -->
+                        <div class="relative">
+                            <select class="input-field text-sm py-2 pr-8 appearance-none bg-white">
+                                <option>Sort by: Featured</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Customer Rating</option>
+                                <option>Newest First</option>
+                                <option>Best Selling</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Filters -->
+                <div id="activeFilters" class="flex flex-wrap gap-2 mb-6">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-accent/10 text-accent">
+                        Electronics
+                        <button class="ml-2 hover:text-blue-700">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-success/10 text-success">
+                        $25 - $100
+                        <button class="ml-2 hover:text-green-700">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </span>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Product Card 1 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1609090240376-918a3b6c0e00" 
+                                 alt="Premium wireless headphones with active noise cancellation and premium leather headband" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=500'; this.onerror=null;">
+                            <div class="absolute top-3 left-3 bg-success text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Best Seller
+                            </div>
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Electronics</span>
+                                <span class="text-xs text-accent font-medium">TechPro</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Wireless Headphones Pro</h3>
+                            <p class="text-secondary text-sm mb-3">Premium noise-canceling technology with 30-hour battery life</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$299</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.8 (124)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1726914653632-1f47ec9811b4" 
+                                 alt="Athletic running shoes with advanced cushioning technology and breathable mesh upper" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg'; this.onerror=null;">
+                            <div class="absolute top-3 left-3 bg-warning text-white px-2 py-1 rounded-full text-xs font-medium">
+                                New
+                            </div>
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Sports</span>
+                                <span class="text-xs text-accent font-medium">ActiveLife</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Athletic Running Shoes</h3>
+                            <p class="text-secondary text-sm mb-3">Lightweight comfort technology with responsive cushioning</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$149</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.6 (89)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1725629776876-27a3b2e6043e" 
+                                 alt="Handcrafted ceramic coffee mug with minimalist design and comfortable ergonomic handle" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=500'; this.onerror=null;">
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Home</span>
+                                <span class="text-xs text-accent font-medium">HomeEssentials</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Ceramic Coffee Mug</h3>
+                            <p class="text-secondary text-sm mb-3">Handcrafted minimalist design perfect for daily use</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$24</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.9 (67)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1651363216111-54431e490eb2" 
+                                 alt="Modern LED desk lamp with adjustable brightness settings and sleek contemporary design" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.pixabay.com/photo/2017/03/25/17/55/color-2174045_1280.png'; this.onerror=null;">
+                            <div class="absolute top-3 left-3 bg-error text-white px-2 py-1 rounded-full text-xs font-medium">
+                                20% Off
+                            </div>
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Electronics</span>
+                                <span class="text-xs text-accent font-medium">TechPro</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">LED Desk Lamp</h3>
+                            <p class="text-secondary text-sm mb-3">Adjustable brightness & color temperature control</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xl font-bold text-accent">$79</span>
+                                    <span class="text-sm text-gray-400 line-through">$99</span>
+                                </div>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.7 (156)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1637999434433-808f1898485b" 
+                                 alt="Stylish backpack with multiple compartments and water-resistant material for daily use" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=500&auto=format&fit=crop'; this.onerror=null;">
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Fashion</span>
+                                <span class="text-xs text-accent font-medium">StyleCraft</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Travel Backpack</h3>
+                            <p class="text-secondary text-sm mb-3">Water-resistant with laptop compartment and USB port</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$89</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.5 (92)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1532288922150-c04819be02b4" 
+                                 alt="Smart fitness tracker with heart rate monitoring and sleep tracking capabilities" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=500&auto=format&fit=crop'; this.onerror=null;">
+                            <div class="absolute top-3 left-3 bg-accent text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Featured
+                            </div>
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Electronics</span>
+                                <span class="text-xs text-accent font-medium">TechPro</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Smart Fitness Tracker</h3>
+                            <p class="text-secondary text-sm mb-3">Heart rate monitoring with 7-day battery life</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$199</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.4 (203)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 7 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1640965077304-342149226663" 
+                                 alt="Modern table lamp with wooden base and fabric shade for ambient home lighting" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=500'; this.onerror=null;">
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Home</span>
+                                <span class="text-xs text-accent font-medium">HomeEssentials</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Modern Table Lamp</h3>
+                            <p class="text-secondary text-sm mb-3">Wooden base with warm ambient lighting</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$65</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.3 (78)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 8 -->
+                    <div class="card group cursor-pointer" onclick="window.location.href='product-detail'">
+                        <div class="relative overflow-hidden rounded-t-lg">
+                            <img src="https://images.unsplash.com/photo-1629641538248-cd3edf4fd020" 
+                                 alt="Wireless charging pad with fast charging technology and LED indicator lights" 
+                                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=500&auto=format&fit=crop'; this.onerror=null;">
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
+                                <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                </svg>
+                            </button>
+                            <button class="absolute bottom-3 right-3 p-2 bg-accent text-white rounded-full hover:bg-blue-700 transition-colors opacity-0 group-hover:opacity-100">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Electronics</span>
+                                <span class="text-xs text-accent font-medium">TechPro</span>
+                            </div>
+                            <h3 class="font-semibold text-primary mb-2">Wireless Charging Pad</h3>
+                            <p class="text-secondary text-sm mb-3">Fast charging with LED indicator and safety features</p>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xl font-bold text-accent">$39</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-600 ml-1">4.2 (134)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 btn-primary text-sm py-2">Add to Cart</button>
+                                <button class="p-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button class="btn-secondary px-8 py-3">
+                        Load More Products
+                        <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Sticky Comparison Bar -->
+    <div id="comparisonBar" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg transform translate-y-full transition-transform duration-300 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-medium text-primary">Compare Products (0/4)</span>
+                    <div class="flex space-x-2" id="comparisonItems">
+                        <!-- Comparison items will be added here dynamically -->
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button class="text-sm text-secondary hover:text-primary transition-colors">Clear All</button>
+                    <a href="comparison-tool" class="btn-primary text-sm px-6 py-2">Compare</a>
+                </div>
+            </div>
+        </div>
+    </div>
