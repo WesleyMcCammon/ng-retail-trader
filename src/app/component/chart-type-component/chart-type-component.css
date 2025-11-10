@@ -1,8 +1,3 @@
-h1 {
-    text-align: center;
-    color: #2c3e50;
-}
-
 .chart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -24,13 +19,3 @@ h1 {
     margin-bottom: 12px;
 }
 
-.chart-card h2 {
-    font-size: 1.2em;
-    margin: 0 0 8px;
-    color: #34495e;
-}
-
-.chart-card p {
-    font-size: 0.95em;
-    color: #555;
-}

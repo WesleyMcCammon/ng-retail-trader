@@ -5,17 +5,16 @@
 }
 
 .main {
-    flex: 0 0 70%;
+    flex: 0 0 75%;
     background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0px 20px 20px 20px;
 }
 
 .sidebar {
-    flex: 0 0 20%;
+    /* flex: 0 0 20%; */
     background-color: #eaeaea;
-    /* padding: 20px; */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
 }
 
 @media (max-width: 768px) {
@@ -27,9 +26,6 @@
     }
 }
 
-ul li {
-    line-height: 2rem;
-}
 a,
 a:visited {
     color: black;

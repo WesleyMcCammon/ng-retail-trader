@@ -1,82 +1,85 @@
-<div class="container">
-    <h1>Tradable Currency Pairs</h1>
-    <p>This guide categorizes the most commonly traded currency pairs into majors, minors, and exotics. Click any pair to view its live chart on Yahoo Finance.</p>
+<header>
+  <h1>Currency Pairs</h1>
+  <p>
+    This guide categorizes the most commonly traded currency pairs into majors, minors, and exotics. Click any pair to
+    view its live chart on Yahoo Finance.
+  </p>
+</header>
 
-    <h2>📘 Major Currency Pairs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Pair</th>
-          <th>Description</th>
-          <th>Chart</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for(currencyPair of getPairsByCurrencyType("MAJOR"); track currencyPairs) {
-          <tr>
-            <td>
-              {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
-            </td>
-            <td>
-              {{currencyPair.description}}
-            </td>
-            <td>
-              <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
+<h2>📘 Major Currency Pairs</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Pair</th>
+      <th>Description</th>
+      <th>Chart</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(currencyPair of getPairsByCurrencyType("MAJOR"); track currencyPairs) {
+    <tr>
+      <td>
+        {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
+      </td>
+      <td>
+        {{currencyPair.description}}
+      </td>
+      <td>
+        <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
 
-    <h2>📗 Minor Currency Pairs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Pair</th>
-          <th>Description</th>
-          <th>Chart</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for(currencyPair of getPairsByCurrencyType("MINOR"); track currencyPairs) {
-          <tr>
-            <td>
-              {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
-            </td>
-            <td>
-              {{currencyPair.description}}
-            </td>
-            <td>
-              <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
+<h2>📗 Minor Currency Pairs</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Pair</th>
+      <th>Description</th>
+      <th>Chart</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(currencyPair of getPairsByCurrencyType("MINOR"); track currencyPairs) {
+    <tr>
+      <td>
+        {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
+      </td>
+      <td>
+        {{currencyPair.description}}
+      </td>
+      <td>
+        <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
 
-    <h2>📙 Top 10 Exotic Currency Pairs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Pair</th>
-          <th>Description</th>
-          <th>Chart</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for(currencyPair of getPairsByCurrencyType("EXOTIC"); track currencyPairs) {
-          <tr>
-            <td>
-              {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
-            </td>
-            <td>
-              {{currencyPair.description}}
-            </td>
-            <td>
-              <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+<h2>📙 Top 10 Exotic Currency Pairs</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Pair</th>
+      <th>Description</th>
+      <th>Chart</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(currencyPair of getPairsByCurrencyType("EXOTIC"); track currencyPairs) {
+    <tr>
+      <td>
+        {{currencyPair.baseCurrency}}/{{currencyPair.quoteCurrency}}
+      </td>
+      <td>
+        {{currencyPair.description}}
+      </td>
+      <td>
+        <a [href]="getChartUrl(currencyPair.baseCurrency, currencyPair.quoteCurrency)" target="_blank">View Chart</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
