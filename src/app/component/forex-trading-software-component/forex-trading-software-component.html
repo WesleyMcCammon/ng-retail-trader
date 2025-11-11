@@ -9,68 +9,18 @@
             <th>Platform</th>
             <th>Best For</th>
             <th>Popular Brokers</th>
+            <th>Website</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>MetaTrader 4 (MT4)</td>
-            <td>Classic charting & automation</td>
-            <td>Pepperstone, IC Markets</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>MetaTrader 5 (MT5)</td>
-            <td>Multi-asset & faster execution</td>
-            <td>FOREX.com, OANDA</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>cTrader</td>
-            <td>Advanced UI & order types</td>
-            <td>GO Markets, IC Markets</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>TradingView</td>
-            <td>Social charting & analysis</td>
-            <td>BlackBull Markets, Eightcap</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Thinkorswim</td>
-            <td>Deep technical tools</td>
-            <td>TD Ameritrade</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>FOREX.com Platform</td>
-            <td>Proprietary multi-asset access</td>
-            <td>FOREX.com</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>OANDA fxTrade</td>
-            <td>Precision execution</td>
-            <td>OANDA</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>IG Markets Platform</td>
-            <td>Low spreads & mobile access</td>
-            <td>IG Markets</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>Plus500</td>
-            <td>Simple interface & support</td>
-            <td>Plus500</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>Interactive Brokers</td>
-            <td>Global access & pro tools</td>
-            <td>IBKR</td>
-        </tr>
+        @for(tradingSoftware of tradingSoftwares; track tradingSoftware) {
+            <tr>
+                <td>{{tradingSoftware.rank}}</td>
+                <td>{{tradingSoftware.platform}}</td>
+                <td>{{tradingSoftware.bestFor}}</td>
+                <td>{{tradingSoftware.popularBrokers}}</td>
+                <td><a [href]="tradingSoftware.url" target="_blank">Visit Site</a></td>
+            </tr>
+        }
     </tbody>
 </table>
