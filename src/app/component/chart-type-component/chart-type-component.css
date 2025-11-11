@@ -19,3 +19,10 @@
     margin-bottom: 12px;
 }
 
+.image-container {
+    height: 350px;
+}
+
+.chart-card p {
+    height:300px;
+}

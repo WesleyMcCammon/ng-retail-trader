@@ -1,38 +1,77 @@
 <header>
-<h1>Popular Chart Types</h1>
+    <h1>Chart Types</h1>
 </header>
 <div class="content">
-<div class="chart-container ">
-    <div class="chart-card">
-        <img src="/assets/images/chartImagePlaceholder.png" alt="Candlestick Chart" />
-        <h2>Candlestick Chart</h2>
-        <p>A candlestick chart is a financial graph that displays price movements of a security over time. Each "candlestick" represents a specific time frame (e.g., a day) and shows the open, high, low, and close prices using rectangular "bodies" and vertical "wicks". Green or white bodies indicate a price increase, while red or black bodies signify a decrease, providing traders with visual insights into market sentiment and trends.</p>
+    <div class="chart-container ">
+        <div class="chart-card">
+            <div class="image-container">
+                <img src="/assets/images/candlestickChart.png" alt="Candlestick Chart" />
+            </div>
+            <h2>Candlestick Chart</h2>
+            <p>A candlestick chart is a financial graph that displays price movements of a security over time. Each
+                "candlestick" represents a specific time frame (e.g., a day) and shows the open, high, low, and close
+                prices using rectangular "bodies" and vertical "wicks". Green or white bodies indicate a price increase,
+                while red or black bodies signify a decrease, providing traders with visual insights into market
+                sentiment and trends.</p>
+            <a href="https://www.investopedia.com/trading/candlestick-charting-what-is-it/" target="_blank">Read
+                More</a>
+        </div>
+        <div class="chart-card">
+            <div class="image-container">
+                <img src="/assets/images/ohlcChart.png" alt="OHLC Bar Chart" />
+            </div>
+            <h2>OHLC Bar Chart</h2>
+            <p>An OHLC bar chart is a financial graph showing the open, high, low, and close prices of an asset over a
+                specific time frame. Vertical lines represent the high and low, with horizontal dashes indicating the
+                open (left) and close (right) prices for each period.</p>
+            <a href="https://www.investopedia.com/terms/o/ohlcchart.asp" target="_blank">Read More</a>
+        </div>
+        <div class="chart-card">
+            <div class="image-container">
+                <img src="/assets/images/heikinAshiChart.png" alt="Heikin Ashi Chart" />
+            </div>
+            <h2>Heikin Ashi</h2>
+            <p>Heikin Ashi charts smooth price data to filter out market noise and highlight trends. Unlike traditional
+                candlesticks, each bar's open/close uses averaged data from previous bars. Green bars indicate uptrends,
+                while red bars signal downtrends. Wicks are typically shorter, making it easier to visualize market
+                direction and potential reversals.</p>
+            <a href="https://www.investopedia.com/trading/heikin-ashi-better-candlestick/" target="_blank">Read More</a>
+        </div>
+        <div class="chart-card">
+            <div class="image-container">
+                <img src="/assets/images/renkoChart.png" alt="Renko Chart" />
+            </div>
+            <h2>Renko Chart</h2>
+            <p>A Renko chart is a type of financial chart that filters out minor price movements by focusing solely on
+                significant changes in price. It is constructed using "bricks" that represent a fixed price movement.
+                Unlike traditional time-based charts, Renko charts do not have uniform time intervals; a new brick is
+                only formed when the price moves by a predefined amount. This makes trends clearer and easier to
+                identify.</p>
+            <a href="https://www.investopedia.com/terms/r/renkochart.asp" target="_blank">Read More</a>
+        </div>
+        <div class="chart-card">
+            <div class="image-container">
+                <img src="/assets/images/rangeChart.png" alt="Range Chart" />
+            </div>
+            <h2>Range Chart</h2>
+            <p>A range chart
+                displays the variability of data by plotting both the minimum and maximum values for each category or
+                time point. It uses two values per data point (a high and a low) to represent the difference, often
+                filling the area between them to emphasize the span of the range. This visualization effectively
+                highlights data distribution and extreme values.</p>
+            <a href="https://www.investopedia.com/articles/trading/10/range-bar-charts-different-view.asp"
+                target="_blank">Read More</a>
+        </div>
+        <div class="chart-card">
+            <div class="image-container">
+                <img src="/assets/images/pointAndFigureChart.png" alt="Point and Figure Chart" />
+            </div>
+            <h2>Point and Figure</h2>
+            <p>A Point and Figure (P&F) chart is a technical analysis tool that filters out minor price movements to
+                reveal significant trends. It uses columns of 'X's to denote rising prices and 'O's for falling prices,
+                with only material price changes recorded. This creates a visually simple chart emphasizing supply and
+                demand dynamics and trend reversals rather than time.</p>
+            <a href="https://www.investopedia.com/articles/technical/03/081303.asp" target="_blank">Read More</a>
+        </div>
     </div>
-    <div class="chart-card">
-        <img src="/assets/images/chartImagePlaceholder.png" alt="OHLC Bar Chart" />
-        <h2>OHLC Bar Chart</h2>
-        <p>An OHLC bar chart is a financial graph showing the open, high, low, and close prices of an asset over a specific time frame. Vertical lines represent the high and low, with horizontal dashes indicating the open (left) and close (right) prices for each period.</p>
-    </div>
-    <div class="chart-card">
-        <img src="/assets/images/chartImagePlaceholder.png" alt="Heikin Ashi Chart" />
-        <h2>Heikin Ashi</h2>
-        <p>Heikin Ashi charts smooth price data to filter out market noise and highlight trends. Unlike traditional candlesticks, each bar's open/close uses averaged data from previous bars. Green bars indicate uptrends, while red bars signal downtrends. Wicks are typically shorter, making it easier to visualize market direction and potential reversals.</p>
-    </div>
-    <div class="chart-card">
-        <img src="/assets/images/chartImagePlaceholder.png" alt="Renko Chart" />
-        <h2>Renko Chart</h2>
-        <p>A Renko chart is a type of financial chart that filters out minor price movements by focusing solely on significant changes in price. It is constructed using "bricks" that represent a fixed price movement. Unlike traditional time-based charts, Renko charts do not have uniform time intervals; a new brick is only formed when the price moves by a predefined amount. This makes trends clearer and easier to identify.</p>
-    </div>
-    <div class="chart-card">
-        <img src="/assets/images/chartImagePlaceholder.png" alt="Range Chart" />
-        <h2>Range Chart</h2>
-        <p>A range chart
-displays the variability of data by plotting both the minimum and maximum values for each category or time point. It uses two values per data point (a high and a low) to represent the difference, often filling the area between them to emphasize the span of the range. This visualization effectively highlights data distribution and extreme values.</p>
-    </div>
-    <div class="chart-card">
-        <img src="/assets/images/chartImagePlaceholder.png" alt="Point and Figure Chart" />
-        <h2>Point and Figure</h2>
-        <p>A Point and Figure (P&F) chart is a technical analysis tool that filters out minor price movements to reveal significant trends. It uses columns of 'X's to denote rising prices and 'O's for falling prices, with only material price changes recorded. This creates a visually simple chart emphasizing supply and demand dynamics and trend reversals rather than time.</p>
-    </div>
-</div>
 </div>
