@@ -6,15 +6,25 @@ body {
     color: #333;
 }
 header {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    background-image: url('/assets/images/bannerImagePattern.png');
+    background-repeat: repeat; 
+}
+.page-header {
     background-color: #1A285E;
     color: white;
     padding: 1.5rem;
     text-align: center;
+
 }
 
-header h1 {
+.page-header h1 {
     margin: 0;
     font-size: 2rem;
+
 }
 
 .container {
@@ -55,4 +65,41 @@ td {
 th {
     background-color: #2c3e50;
     color: white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .app-layout {
+        display: block;
+    }
+    .sidebar {
+        display: none;
+    }}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .app-layout {
+        display:grid;grid-template-columns: 25fr 75fr;padding:10px
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .app-layout {
+        display:grid;grid-template-columns: 15fr 85fr;padding:10px
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .app-layout {
+        display:grid;grid-template-columns: 15fr 85fr;padding:10px
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .app-layout {
+        display:grid;grid-template-columns: 15fr 85fr;padding:10px
+    }
 }
